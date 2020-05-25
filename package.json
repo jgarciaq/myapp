@@ -1,0 +1,25 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "Contact List App",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongojs": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgarciaq/myapp.git"
+  },
+  "author": "Juan Garcia <jgarciaq@outlook.com.pe>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgarciaq/myapp/issues"
+  },
+  "homepage": "https://github.com/jgarciaq/myapp#readme"
+}
