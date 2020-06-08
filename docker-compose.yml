@@ -1,0 +1,26 @@
+version: "3"
+services:
+  db-svc:
+    container_name: docker-db-svc
+    restart: always
+    build: .
+    ports:
+      - "8080:3000"
+    depends_on:
+      - "mydb"
+    networks:
+      - my_net
+
+  mydb:
+    container_name: "mongo"
+    image: "mongo"
+    volumes:
+      - ./contactlist:/data/db
+    ports:
+      - "27018:27017"
+    networks:
+      - my_net
+
+networks:
+  my_net:
+    driver: bridge

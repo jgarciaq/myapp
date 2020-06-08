@@ -3,8 +3,22 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('contactlist', ['contactlist']);
+
+// DB Connect con hostname
+
+var databaseUrl = "mydb/contactlist";
+var collections = ["contactlist"];
+var db = mongojs(databaseUrl, collections);
 var bodyParser = require('body-parser');
+
+
+// var db = mongojs('contactlist', ['contactlist']);
+
+// 3. Log any mongodb errors
+db.on("error", function(error) {
+  console.log("Database Error:", error);
+});
+
 
 app.use(express.static(__dirname + '/public'));           
 app.use(bodyParser.json());
